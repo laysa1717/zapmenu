@@ -1,0 +1,54 @@
+# ZAPMENU
+
+## Descrição
+
+ZAPMENU é um microserviço API REST desenvolvido com o framework [NestJS](https://nestjs.com/). Este projeto foi projetado para se conectar ao Firebase, utilizando a arquitetura Clean Architecture para garantir um código organizado, escalável e de fácil manutenção.
+
+## Tecnologias Utilizadas
+
+- **NestJS**: Um framework progressivo para a construção de aplicações Node.js eficientes e escaláveis.
+- **Firebase**: Plataforma de desenvolvimento de aplicativos que oferece uma variedade de ferramentas e serviços para ajudar a desenvolver aplicativos de alta qualidade.
+- **Clean Architecture**: Um padrão de arquitetura de software que promove a separação de interesses e a independência de frameworks, bancos de dados, interfaces de usuário e qualquer agência externa.
+
+## Estrutura do Projeto
+
+A estrutura do projeto segue os princípios da Clean Architecture, dividindo o código em camadas distintas:
+
+- **Domain**: Contém as entidades e interfaces principais do negócio.
+- **Application**: Inclui casos de uso e lógica de aplicação.
+- **Infrastructure**: Responsável pela implementação de detalhes, como repositórios e serviços externos.
+- **Presentation**: Camada que lida com a interação com o usuário, como controladores e rotas.
+
+## Configuração
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/zapmenu.git
+   ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   cd zapmenu
+   npm install
+   ```
+
+3. **Configuração do Firebase:**
+
+   - Certifique-se de ter uma conta no Firebase e configure seu projeto.
+   - Atualize o arquivo de configuração com suas credenciais do Firebase.
+
+4. **Inicie o servidor:**
+
+   ```bash
+   npm run start
+   ```
+
+## Contribuição
+
+Sinta-se à vontade para contribuir com este projeto. Para isso, faça um fork do repositório, crie uma branch para suas alterações e envie um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
