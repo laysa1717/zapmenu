@@ -8,17 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const config_module_1 = require("./infra/config/config.module");
-const axios_1 = require("@nestjs/axios");
-const menu_controller_1 = require("./infra/controller/menu.controller");
-const menu_module_1 = require("./menu/menu.module");
+const config_1 = require("@nestjs/config");
+const menu_controller_1 = require("./infra/interface/controller/menu.controller");
+const firebase_module_1 = require("./infra/firebase/firebase.module");
+const user_controller_1 = require("./infra/interface/controller/user.controller");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [axios_1.HttpModule, config_module_1.EnvConfigModule, menu_module_1.MenuModule],
-        controllers: [menu_controller_1.MenuController],
-        providers: [],
+        imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+                envFilePath: '.env',
+            }),
+            firebase_module_1.FirebaseModule
+        ],
+        controllers: [menu_controller_1.MenuController, user_controller_1.UserController],
     })
 ], AppModule);
+//# sourceMappingURL=app.module.js.map

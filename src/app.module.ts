@@ -1,12 +1,18 @@
 import { Module } from '@nestjs/common';
-import { EnvConfigModule } from './infra/config/config.module';
-import { HttpModule } from '@nestjs/axios';
-import { MenuController } from './infra/controller/menu.controller';
-import { MenuModule } from './menu/menu.module';
+import { ConfigModule } from '@nestjs/config';
+import { MenuController } from './infra/interface/controller/menu.controller';
+import { FirebaseModule } from './infra/firebase/firebase.module';
+import { UserController } from './infra/interface/controller/user.controller';
+
 
 @Module({
-  imports: [HttpModule, EnvConfigModule, MenuModule],
-  controllers: [MenuController],
-  providers: [],
+    imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+            envFilePath: '.env',
+        }),
+        FirebaseModule
+    ],
+    controllers: [MenuController, UserController],
 })
-export class AppModule {}
+export class AppModule { }
